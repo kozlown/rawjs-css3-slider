@@ -1,0 +1,239 @@
+body 
+	width: 100%
+	height: 100%
+	margin: 0
+	padding: 0
+	overflow: hidden
+	font-family: sans-serif
+
+	#slider-container 
+		position: absolute
+		left: 0px
+		top: 0px
+		height: 800px
+		width: 100%
+
+		.slide-button 
+			display: none
+			position: absolute
+			font-size: 100px !important
+			text-align: center
+			top: calc(50% - 25px)
+			transition: 0.5s
+			color: rgba(0,0,0,0.8)
+			width: 50px
+			height: 50px
+			padding: 5px
+			z-index: 2
+			cursor: pointer
+
+			&.over 
+				display: block
+				transition: 1s
+
+			&:hover 
+				color: rgba(0,0,0,1)
+				transition: 0.5s
+
+			&#go-right
+				right: 20px
+
+				i 
+					position: relative
+				    bottom: 2px
+				    left: 3px
+
+			&#go-left 
+				left: 20px
+
+				i 
+					position: relative
+				    bottom: 2px
+				    right: 3px
+
+		.slider 
+			position: absolute
+			top: 0px
+			left: 0px
+			width: 400%
+			height: 100%
+			margin: 0
+			padding: 0
+			transition: left 2s
+		
+			.slider-section 
+				position: absolute
+				width: 25%
+				height: 100%
+				background-size: 100%
+				padding-top: 100px
+		
+				&#vos-meilleurs-parcours 
+					left: 0%
+					background-image: url("http://www.mountnpass.com/wp-content/uploads/2015/05/velo-Pyrénées.jpg")
+					background-size: cover
+		
+				&#les-amis 
+					left: 25%
+					background-color: white
+					text-align: center
+
+					h1
+						color: #f44336
+						font-family: sans-serif
+						font-weight: 300
+						letter-spacing: 5px
+						font-size: 40px
+
+					h2 
+						color: rgba(0,0,0,0.7)
+						font-family: sans-serif
+						font-weight: 300
+						letter-spacing: 5px
+						font-size: 20px
+				
+					#types-amis 
+						position: relative
+						left: 100px
+						right: 100px
+						width: calc(100% - 300px)
+						height: 60%
+						padding: 2.5%
+
+						.types-amis-section 
+							display: inline-block
+							float: left
+							padding: 0px
+							height: 100%
+							width: 23%
+							margin-left: 1%
+							margin-right: 1%
+							cursor: pointer
+
+							&:hover .plain 
+								background-color: transparent
+								transition: 0.5s ease-in
+
+						.empty 
+							position: relative
+							top: 0px
+							left: 0px
+							width: 100%
+							height: 70%
+				
+						.plain 
+							z-index: 4
+							position: relative
+							background-color: rgba(244, 67, 54, 0.8)
+							bottom: 0px
+							left: 0px
+							width: 100%
+							height: 30%
+							color: white
+							text-align: center
+							transition: 0.5s 
+							i 
+								display: block
+								font-size: 50px
+								top: 20px
+								position: relative	
+							p 
+								margin-top: 30px
+								font-size: 20px
+								font-family: sans-serif
+
+						#hebergeurs-restaurateurs 
+							background-image: url("http://md1.libe.com/photo/864025-portrait-medias-gastronomie.jpg?modified_at=1459333381")
+							background-size: cover
+
+						#reparateurs-loueurs 
+							background-image: url("http://cdn.darkhorizons.com/wp-content/uploads/2016/11/next-doctor-who-to-be-young-again.jpg")
+							background-size: cover
+							background-position: center
+
+						#transporteurs-bagagistes 
+							background-image: url("http://media.comprendrechoisir.com/usage=full:orientation=horizontal/velo-train-transport")
+							background-size: cover
+							background-position: center
+						
+						#offices-du-tourisme 
+							background-image: url("http://cdn.toulouse-tourisme.com/medias//photos/original/PCUMID031FS00965_2_donjon1.jpg")
+							background-size: cover
+							background-position: center
+				
+
+					#tous-nos-amis 
+						padding: 15px
+						font-size: 20px
+						background-color: transparent
+						color: rgb(244, 67, 54)
+						letter-spacing: 3px
+						border: 2px solid rgb(244, 67, 54)
+						transition: 1s
+						cursor: pointer
+						top: 30px
+						position: relative
+
+						&:hover 
+							color: rgba(0,0,0,0.7)
+		
+				&#la-communaute 
+					left: 50%
+					background-image: url("http://photoproevent.com/_blog/wp-content/uploads/2011/10/we-are-logo-mosaique-photo-animation-guyencourt.jpg")
+					background-size: cover
+		
+				&#le-mag 
+					left: 75%
+					background-color: white
+
+			&.slider-anim-1 
+				left: 0%
+			
+			&.slider-anim-2 
+				left: -100%
+			
+			&.slider-anim-3 
+				left: -200%
+			
+			&.slider-anim-4 
+				left: -300%
+			
+			&.slider-anim-5 
+				left: -400%
+
+	header 
+		position: fixed
+		left: 0px
+		top: 0px
+		height: 80px
+		z-index: 5
+		background-color: #2e2e2e
+		width: 100vw
+		color: white
+
+		#logo 
+			position: absolute
+			top: 20px
+			left: 20px
+		
+
+		ul 
+			text-align: right
+			position: absolute
+			left: 312px
+			width: calc(100vw - 352px)
+			top: 20px
+		
+
+		li 
+			position: relative
+			cursor: pointer
+			padding-left: 40px
+			padding-right: 40px
+			display: inline
+		
+	
+
+	
+
+

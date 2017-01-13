@@ -1,293 +1,195 @@
-﻿html, body {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	font-family: sans-serif;
-}
-
-#slider-container {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	height: 800px;
-	width: 100%;
-}
-
-.slider {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 400%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-.slider-section {
-	position: absolute;
-	width: 25%;
-	height: 100%;
-	background-size: 100%;
-	padding-top: 100px;
-}
-
-#vos-meilleurs-parcours {
-	left: 0%;
-	background-image: url("http://www.mountnpass.com/wp-content/uploads/2015/05/velo-Pyrénées.jpg");
-	background-size: cover;
-}
-
-#les-amis {
-	left: 25%;
-	background-color: white;
-	text-align: center;
-}
-
-#les-amis h1 {
-	color: #f44336;
-	font-family: sans-serif;
-	letter-spacing: 5px;
-	font-size: 60px;
-}
-
-#les-amis h1 {
-	color: #f44336;
-	font-family: sans-serif;
-	font-weight: 300;
-	letter-spacing: 5px;
-	font-size: 40px;
-}
-
-#les-amis h2 {
-	color: rgba(0,0,0,0.7);
-	font-family: sans-serif;
-	font-weight: 300;
-	letter-spacing: 5px;
-	font-size: 20px;
-}
-
-#types-amis {
-	position: relative;
-	left: 100px;
-	right: 100px;
-	width: calc(100% - 300px);
-	height: 60%;
-	padding: 2.5%;
-}
-
-.types-amis-section {
-	display: inline-block;
-	float: left;
-	padding: 0px;
-	height: 100%;
-	width: 23%;
-	margin-left: 1%;
-	margin-right: 1%;
-	cursor: pointer;
-}
-.types-amis-section .empty {
-	position: relative;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 70%;
-}
-.types-amis-section .plain {
-	z-index: 4;
-	position: relative;
-	background-color: rgba(244, 67, 54, 0.8);
-	bottom: 0px;
-	left: 0px;
-	width: 100%;
-	height: 30%;
-	color: white;
-	text-align: center;
-	transition: 0.5s;
-}
-
-.types-amis-section:hover .plain {
-	background-color: transparent;
-	transition: 0.5s ease-in;
-}
-
-.types-amis-section .plain i {
-	display: block;
-	font-size: 50px;
-	top: 20px;
-	position: relative;
-}
-
-.types-amis-section .plain p {
-	margin-top: 30px;
-	font-size: 20px;
-	font-family: sans-serif;
-}
-
-#hebergeurs-restaurateurs {
-	background-image: url("http://md1.libe.com/photo/864025-portrait-medias-gastronomie.jpg?modified_at=1459333381");
-	background-size: cover;
-}
-
-#tous-nos-amis {
-	padding: 15px;
-	font-size: 20px;
-	background-color: transparent;
-	color: rgb(244, 67, 54);
-	letter-spacing: 3px;
-	border: 2px solid rgb(244, 67, 54);
-	transition: 1s;
-	cursor: pointer;
-	top: 30px;
-	position: relative;
-}
-#tous-nos-amis:hover {
-	color: rgba(0,0,0,0.7);
-}
-
-#réparateurs-loueurs {
-	background-image: url("http://cdn.darkhorizons.com/wp-content/uploads/2016/11/next-doctor-who-to-be-young-again.jpg");
-	background-size: cover;
-	background-position: center;
-}
-
-#transporteurs-bagagistes {
-	background-image: url("http://media.comprendrechoisir.com/usage=full:orientation=horizontal/velo-train-transport");
-	background-size: cover;
-	background-position: center;
-}
-
-#offices-du-tourisme {
-	background-image: url("http://cdn.toulouse-tourisme.com/medias//photos/original/PCUMID031FS00965_2_donjon1.jpg");
-	background-size: cover;
-	background-position: center;
-}
-
-#la-communaute {
-	left: 50%;
-	background-image: url("http://photoproevent.com/_blog/wp-content/uploads/2011/10/we-are-logo-mosaique-photo-animation-guyencourt.jpg");
-	background-size: cover;
-}
-
-#le-mag {
-	left: 75%;
-	background-color: white;
-}
-
-.slide-button {
-	display: none;
-	position: absolute;
-	font-size: 100px !important;
-	text-align: center;
-	top: calc(50% - 25px);
-	transition: 0.5s;
-	color: rgba(0,0,0,0.8);
-	width: 50px;
-	height: 50px;
-	padding: 5px;
-	z-index: 2;
-	cursor: pointer;
-}
-
-.over {
-	display: block;
-	transition: 1s;
-}
-
-.slide-button:hover {
-	color: rgba(0,0,0,1);
-	transition: 0.5s;
-}
-
-#go-right i {
-	position: relative;
-    bottom: 2px;
-    left: 3px;
-} 
-
-#go-left i {
-	position: relative;
-    bottom: 2px;
-    right: 3px;
-}
-
-#go-right {
-	right: 20px;
-}
-
-#go-left {
-	left: 20px;
-}
-
-.slider-transition {
-	transition: left 2s;
-}
-
-.slider-anim-1 {
-	left: 0%;
-}
-.slider-anim-2 {
-	left: -100%;
-}
-.slider-anim-3 {
-	left: -200%;
-}
-.slider-anim-4 {
-	left: -300%;
-}
-.slider-anim-5 {
-	left: -400%;
-}
-
-#slider-left {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 50%;
-	height: 100%;
-	z-index: 1;
-	/*background-color: rgba(0,0,0,0.5);*/
-}
-#slider-right {
-	position: absolute;
-	left: 50%;
-	top: 0px;
-	width: 50%;
-	height: 100%;
-	z-index: 1;
-	/*background-color: rgba(255,255,255,0.5);*/
-}
-
-header {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	height: 80px;
-	z-index: 5;
-	background-color: #2e2e2e;
-	width: 100vw;
-	color: white;
-}
-
-#logo {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-}
-
-header ul {
-	text-align: right;
-	position: absolute;
-	left: 312px;
-	width: calc(100vw - 352px);
-	top: 20px;
-}
-
-header li {
-	position: relative;
-	cursor: pointer;
-	padding-left: 40px;
-	padding-right: 40px;
-	display: inline;
-}
+@charset "UTF-8";
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: sans-serif; }
+  body #slider-container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 800px;
+    width: 100%; }
+    body #slider-container .slide-button {
+      display: none;
+      position: absolute;
+      font-size: 100px !important;
+      text-align: center;
+      top: calc(50% - 25px);
+      transition: 0.5s;
+      color: rgba(0, 0, 0, 0.8);
+      width: 50px;
+      height: 50px;
+      padding: 5px;
+      z-index: 2;
+      cursor: pointer; }
+      body #slider-container .slide-button.over {
+        display: block;
+        transition: 1s; }
+      body #slider-container .slide-button:hover {
+        color: black;
+        transition: 0.5s; }
+      body #slider-container .slide-button#go-right {
+        right: 20px; }
+        body #slider-container .slide-button#go-right i {
+          position: relative;
+            position-bottom: 2px;
+            position-left: 3px; }
+      body #slider-container .slide-button#go-left {
+        left: 20px; }
+        body #slider-container .slide-button#go-left i {
+          position: relative;
+            position-bottom: 2px;
+            position-right: 3px; }
+    body #slider-container .slider {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 400%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      transition: left 2s; }
+      body #slider-container .slider .slider-section {
+        position: absolute;
+        width: 25%;
+        height: 100%;
+        background-size: 100%;
+        padding-top: 100px; }
+        body #slider-container .slider .slider-section#vos-meilleurs-parcours {
+          left: 0%;
+          background-image: url("http://www.mountnpass.com/wp-content/uploads/2015/05/velo-Pyrénées.jpg");
+          background-size: cover; }
+        body #slider-container .slider .slider-section#les-amis {
+          left: 25%;
+          background-color: white;
+          text-align: center; }
+          body #slider-container .slider .slider-section#les-amis h1 {
+            color: #f44336;
+            font-family: sans-serif;
+            font-weight: 300;
+            letter-spacing: 5px;
+            font-size: 40px; }
+          body #slider-container .slider .slider-section#les-amis h2 {
+            color: rgba(0, 0, 0, 0.7);
+            font-family: sans-serif;
+            font-weight: 300;
+            letter-spacing: 5px;
+            font-size: 20px; }
+          body #slider-container .slider .slider-section#les-amis #types-amis {
+            position: relative;
+            left: 100px;
+            right: 100px;
+            width: calc(100% - 300px);
+            height: 60%;
+            padding: 2.5%; }
+            body #slider-container .slider .slider-section#les-amis #types-amis .types-amis-section {
+              display: inline-block;
+              float: left;
+              padding: 0px;
+              height: 100%;
+              width: 23%;
+              margin-left: 1%;
+              margin-right: 1%;
+              cursor: pointer; }
+              body #slider-container .slider .slider-section#les-amis #types-amis .types-amis-section:hover .plain {
+                background-color: transparent;
+                transition: 0.5s ease-in; }
+            body #slider-container .slider .slider-section#les-amis #types-amis .empty {
+              position: relative;
+              top: 0px;
+              left: 0px;
+              width: 100%;
+              height: 70%; }
+            body #slider-container .slider .slider-section#les-amis #types-amis .plain {
+              z-index: 4;
+              position: relative;
+              background-color: rgba(244, 67, 54, 0.8);
+              bottom: 0px;
+              left: 0px;
+              width: 100%;
+              height: 30%;
+              color: white;
+              text-align: center;
+              transition: 0.5s; }
+              body #slider-container .slider .slider-section#les-amis #types-amis .plain i {
+                display: block;
+                font-size: 50px;
+                top: 20px;
+                position: relative; }
+              body #slider-container .slider .slider-section#les-amis #types-amis .plain p {
+                margin-top: 30px;
+                font-size: 20px;
+                font-family: sans-serif; }
+            body #slider-container .slider .slider-section#les-amis #types-amis #hebergeurs-restaurateurs {
+              background-image: url("http://md1.libe.com/photo/864025-portrait-medias-gastronomie.jpg?modified_at=1459333381");
+              background-size: cover; }
+            body #slider-container .slider .slider-section#les-amis #types-amis #reparateurs-loueurs {
+              background-image: url("http://cdn.darkhorizons.com/wp-content/uploads/2016/11/next-doctor-who-to-be-young-again.jpg");
+              background-size: cover;
+              background-position: center; }
+            body #slider-container .slider .slider-section#les-amis #types-amis #transporteurs-bagagistes {
+              background-image: url("http://media.comprendrechoisir.com/usage=full:orientation=horizontal/velo-train-transport");
+              background-size: cover;
+              background-position: center; }
+            body #slider-container .slider .slider-section#les-amis #types-amis #offices-du-tourisme {
+              background-image: url("http://cdn.toulouse-tourisme.com/medias//photos/original/PCUMID031FS00965_2_donjon1.jpg");
+              background-size: cover;
+              background-position: center; }
+          body #slider-container .slider .slider-section#les-amis #tous-nos-amis {
+            padding: 15px;
+            font-size: 20px;
+            background-color: transparent;
+            color: #f44336;
+            letter-spacing: 3px;
+            border: 2px solid #f44336;
+            transition: 1s;
+            cursor: pointer;
+            top: 30px;
+            position: relative; }
+            body #slider-container .slider .slider-section#les-amis #tous-nos-amis:hover {
+              color: rgba(0, 0, 0, 0.7); }
+        body #slider-container .slider .slider-section#la-communaute {
+          left: 50%;
+          background-image: url("http://photoproevent.com/_blog/wp-content/uploads/2011/10/we-are-logo-mosaique-photo-animation-guyencourt.jpg");
+          background-size: cover; }
+        body #slider-container .slider .slider-section#le-mag {
+          left: 75%;
+          background-color: white; }
+      body #slider-container .slider.slider-anim-1 {
+        left: 0%; }
+      body #slider-container .slider.slider-anim-2 {
+        left: -100%; }
+      body #slider-container .slider.slider-anim-3 {
+        left: -200%; }
+      body #slider-container .slider.slider-anim-4 {
+        left: -300%; }
+      body #slider-container .slider.slider-anim-5 {
+        left: -400%; }
+  body header {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 80px;
+    z-index: 5;
+    background-color: #2e2e2e;
+    width: 100vw;
+    color: white; }
+    body header #logo {
+      position: absolute;
+      top: 20px;
+      left: 20px; }
+    body header ul {
+      text-align: right;
+      position: absolute;
+      left: 312px;
+      width: calc(100vw - 352px);
+      top: 20px; }
+    body header li {
+      position: relative;
+      cursor: pointer;
+      padding-left: 40px;
+      padding-right: 40px;
+      display: inline; }
