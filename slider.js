@@ -56,7 +56,7 @@ let hide_left_arrow = () => {
 
 
 // automatic scrolling
-let automatic_scrolling = setInterval(go_right, 3000)
+let automatic_scrolling = setInterval(go_right, 5000)
 
 
 // stop automatic scrolling

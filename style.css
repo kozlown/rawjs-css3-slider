@@ -29,7 +29,6 @@
 	position: absolute;
 	width: 25%;
 	height: 100%;
-	display: inline-block;
 	background-size: 100%;
 	padding-top: 100px;
 }
@@ -140,6 +139,8 @@
 	border: 2px solid rgb(244, 67, 54);
 	transition: 1s;
 	cursor: pointer;
+	top: 30px;
+	position: relative;
 }
 #tous-nos-amis:hover {
 	color: rgba(0,0,0,0.7);
