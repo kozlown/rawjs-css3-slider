@@ -1,0 +1,141 @@
+﻿html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#slider-container {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 800px;
+	width: 100%;
+}
+
+.slider {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 400%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.slider-section {
+	position: absolute;
+	width: 25%;
+	height: 100%;
+	display: inline-block;
+	background-size: 100%;
+}
+
+#vos-meilleurs-parcours {
+	left: 0%;
+	background-image: url("http://www.mountnpass.com/wp-content/uploads/2015/05/velo-Pyrénées.jpg");
+}
+
+#les-amis {
+	left: 25%;
+	background-color: white;
+}
+
+#la-communaute {
+	left: 50%;
+	background-image: url("http://photoproevent.com/_blog/wp-content/uploads/2011/10/we-are-logo-mosaique-photo-animation-guyencourt.jpg");
+}
+
+#le-mag {
+	left: 75%;
+	background-color: white;
+}
+
+.slide-button {
+	visibility: hidden;
+	position: absolute;
+	font-size: 50px !important;
+	text-align: center;
+	top: calc(50% - 25px);
+	transition: 0.5s;
+	background-color: rgba(0,0,0,0);
+	color: rgba(255,255,255,0);
+	width: 50px;
+	height: 50px;
+	padding: 5px;
+	z-index: 2;
+	cursor: pointer;
+	border-radius: 50px;
+}
+
+.over {
+	visibility: visible;
+	transition: 1s;
+	background-color: rgba(0,0,0,0.6);
+	color: rgba(255,255,255,0.9);
+}
+
+.slide-button:hover {
+	background-color: rgba(0,0,0,0.9);
+	transition: 0.5s;
+}
+
+#go-right i {
+	position: relative;
+    bottom: 2px;
+    left: 3px;
+} 
+
+#go-left i {
+	position: relative;
+    bottom: 2px;
+    right: 3px;
+}
+
+#go-right {
+	right: 20px;
+}
+
+#go-left {
+	left: 20px;
+}
+
+.slider-transition {
+	transition: left 2s;
+}
+
+.slider-anim-1 {
+	left: 0%;
+}
+.slider-anim-2 {
+	left: -100%;
+}
+.slider-anim-3 {
+	left: -200%;
+}
+.slider-anim-4 {
+	left: -300%;
+}
+.slider-anim-5 {
+	left: -400%;
+}
+
+#slider-left {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 50%;
+	height: 100%;
+	z-index: 1;
+	/*background-color: rgba(0,0,0,0.5);*/
+}
+#slider-right {
+	position: absolute;
+	left: 50%;
+	top: 0px;
+	width: 50%;
+	height: 100%;
+	z-index: 1;
+	/*background-color: rgba(255,255,255,0.5);*/
+}
