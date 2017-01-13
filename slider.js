@@ -1,11 +1,11 @@
 let slider_container = document.getElementById('slider-container')
 let slider_dom = document.getElementById('slider')
-let slider_left =  document.getElementById('slider-left')
-let slider_right =  document.getElementById('slider-right')
 
 let go_right_dom = document.getElementById('go-right')
 let go_left_dom = document.getElementById('go-left')
 let actual_section = 1
+mousePos = {}
+
 
 
 // slide buttons
@@ -78,15 +78,25 @@ go_left_dom.addEventListener("click", () => {
 
 // stop automatic scrolling
 slider_dom.addEventListener("click", stop_automatic_scrolling)
-slider_left.addEventListener("mouseover", show_left_arrow)
-slider_left.addEventListener("mouseout", hide_left_arrow)
-slider_right.addEventListener("mouseover", show_right_arrow)
-slider_right.addEventListener("mouseout", hide_right_arrow)
+slider_container.addEventListener("mousemove", () => {
+  if (mousePos.x < window.innerWidth/2){
+    show_left_arrow()
+    hide_right_arrow()
+  }
+  else {
+    show_right_arrow()
+    hide_left_arrow()
+  }
+})
+slider_container.addEventListener("mouseout", () => {
+  hide_left_arrow()
+  hide_right_arrow()
+})
 
-go_left_dom.addEventListener("mouseover", show_left_arrow)
-go_left_dom.addEventListener("mouseout", hide_left_arrow)
-go_right_dom.addEventListener("mouseover", show_right_arrow)
-go_right_dom.addEventListener("mouseout", hide_right_arrow)
+
+
+
+
 
 // CLASSES FUNCTIONS
 function hasClass(el, className) {
@@ -108,3 +118,40 @@ function removeClass(el, className) {
     el.className=el.className.replace(reg, ' ')
   }
 }
+
+
+
+
+
+  
+
+// GET MOUSE POSITON
+(function() {
+    document.onmousemove = handleMouseMove;
+    function handleMouseMove(event) {
+        var dot, eventDoc, doc, body, pageX, pageY;
+
+        event = event || window.event; // IE-ism
+
+        // If pageX/Y aren't available and clientX/Y are,
+        // calculate pageX/Y - logic taken from jQuery.
+        // (This is to support old IE)
+        if (event.pageX == null && event.clientX != null) {
+            eventDoc = (event.target && event.target.ownerDocument) || document;
+            doc = eventDoc.documentElement;
+            body = eventDoc.body;
+
+            event.pageX = event.clientX +
+              (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+              (doc && doc.clientLeft || body && body.clientLeft || 0);
+            event.pageY = event.clientY +
+              (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
+              (doc && doc.clientTop  || body && body.clientTop  || 0 );
+        }
+
+        mousePos = {
+            x: event.pageX,
+            y: event.pageY
+        };
+    }
+})();
