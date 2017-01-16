@@ -1,34 +1,36 @@
 #slider-container
-    position: absolute
+    position: relative
     left: 0px
-    top: 0px
-    height: 800px
+    margin-top: 80px
+    height: 100vh
     width: 100%
 
     .slide-button
         display: none
         position: absolute
-        font-size: 100px !important
+        font-size: 50px !important
         text-align: center
         top: calc(50% - 25px)
         transition: 0.5s
-        color: rgba(0,0,0,0.8)
+        color: rgba($red,0.8)
+        border-radius: 50px
         width: 50px
         height: 50px
         padding: 5px
-        z-index: 3
+        z-index: 4
         cursor: pointer
 
         @media screen and (max-width: 800px)
             display: block
-            color: rgba(0,0,0,1)
+            color: rgba($red,1)
 
         &.over
             display: block
             transition: 1s
 
         &:hover
-            color: rgba(0,0,0,1)
+            background-color: rgba($red,.5)
+            color: rgba($red,1)
             transition: 0.5s
 
         &#go-right
@@ -36,7 +38,7 @@
 
             i
                 position: relative
-                bottom: 2px
+                bottom: 4px
                 left: 3px
 
         &#go-left
@@ -44,8 +46,15 @@
 
             i
                 position: relative
-                bottom: 2px
+                bottom: 4px
                 right: 3px
+
+    #go-down
+        position: absolute
+        bottom: 100px
+        z-index: 5
+        font-size: 50px
+        cursor: pointer
 
     .slider
         position: absolute
@@ -62,7 +71,6 @@
             width: 25%
             height: 100%
             background-size: 100%
-            padding-top: 80px
 
             @import vos-meilleurs-parcours
             @import les-amis

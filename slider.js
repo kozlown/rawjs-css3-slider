@@ -3,6 +3,7 @@ let slider_dom = document.getElementById('slider')
 
 let go_right_dom = document.getElementById('go-right')
 let go_left_dom = document.getElementById('go-left')
+let go_down_dom = document.getElementById('go-down')
 let actual_section = 1
 mousePos = {}
 
@@ -53,7 +54,6 @@ let hide_left_arrow = () => {
 }
 
 
-
 // automatic scrolling
 let automatic_scrolling = setInterval(go_right, 5000)
 
@@ -73,6 +73,9 @@ go_left_dom.addEventListener("click", () => {
   stop_automatic_scrolling()
   go_left()
 })
+go_down_dom.addEventListener("click", () => {
+    scrollTo(document.body, document.getElementById("destinations-a-velo").offsetTop-100, 600)
+})
 
 
 // stop automatic scrolling
@@ -91,10 +94,6 @@ slider_container.addEventListener("mouseout", () => {
   hide_left_arrow()
   hide_right_arrow()
 })
-
-
-
-
 
 
 // CLASSES FUNCTIONS
@@ -119,9 +118,18 @@ function removeClass(el, className) {
 }
 
 
+// SCROLL FUNCTION
+function scrollTo(element, to, duration) {
+    if (duration <= 0) return;
+    var difference = to - element.scrollTop;
+    var perTick = difference / duration * 10;
 
-
-
+    setTimeout(function() {
+        element.scrollTop = element.scrollTop + perTick;
+        if (element.scrollTop === to) return;
+        scrollTo(element, to, duration - (1/perTick > 5 ? 1/perTick : 5));
+    }, 10);
+}
 
 
 // GET MOUSE POSITON
