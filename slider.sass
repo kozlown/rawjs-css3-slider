@@ -1,0 +1,85 @@
+#slider-container
+    position: absolute
+    left: 0px
+    top: 0px
+    height: 800px
+    width: 100%
+
+    .slide-button
+        display: none
+        position: absolute
+        font-size: 100px !important
+        text-align: center
+        top: calc(50% - 25px)
+        transition: 0.5s
+        color: rgba(0,0,0,0.8)
+        width: 50px
+        height: 50px
+        padding: 5px
+        z-index: 3
+        cursor: pointer
+
+        @media screen and (max-width: 800px)
+            display: block
+            color: rgba(0,0,0,1)
+
+        &.over
+            display: block
+            transition: 1s
+
+        &:hover
+            color: rgba(0,0,0,1)
+            transition: 0.5s
+
+        &#go-right
+            right: 20px
+
+            i
+                position: relative
+                bottom: 2px
+                left: 3px
+
+        &#go-left
+            left: 20px
+
+            i
+                position: relative
+                bottom: 2px
+                right: 3px
+
+    .slider
+        position: absolute
+        top: 0px
+        left: 0px
+        width: 400%
+        height: 100%
+        margin: 0
+        padding: 0
+        transition: left 2s
+
+        .slider-section
+            position: absolute
+            width: 25%
+            height: 100%
+            background-size: 100%
+            padding-top: 80px
+
+            @import vos-meilleurs-parcours
+            @import les-amis
+            @import la-communaute
+            @import le-mag
+
+        &.slider-anim-1
+            left: 0%
+
+        &.slider-anim-2
+            left: -100%
+
+        &.slider-anim-3
+            left: -200%
+
+        &.slider-anim-4
+            left: -300%
+
+        &.slider-anim-5
+            left: -400%

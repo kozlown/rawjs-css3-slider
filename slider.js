@@ -7,7 +7,6 @@ let actual_section = 1
 mousePos = {}
 
 
-
 // slide buttons
 let go_right = (() => {
   let last_section = actual_section
@@ -123,7 +122,7 @@ function removeClass(el, className) {
 
 
 
-  
+
 
 // GET MOUSE POSITON
 (function() {

@@ -23,8 +23,12 @@ body {
       width: 50px;
       height: 50px;
       padding: 5px;
-      z-index: 2;
+      z-index: 3;
       cursor: pointer; }
+      @media screen and (max-width: 800px) {
+        body #slider-container .slide-button {
+          display: block;
+          color: black; } }
       body #slider-container .slide-button.over {
         display: block;
         transition: 1s; }
@@ -35,14 +39,14 @@ body {
         right: 20px; }
         body #slider-container .slide-button#go-right i {
           position: relative;
-            position-bottom: 2px;
-            position-left: 3px; }
+          bottom: 2px;
+          left: 3px; }
       body #slider-container .slide-button#go-left {
         left: 20px; }
         body #slider-container .slide-button#go-left i {
           position: relative;
-            position-bottom: 2px;
-            position-right: 3px; }
+          bottom: 2px;
+          right: 3px; }
     body #slider-container .slider {
       position: absolute;
       top: 0px;
@@ -57,7 +61,7 @@ body {
         width: 25%;
         height: 100%;
         background-size: 100%;
-        padding-top: 100px; }
+        padding-top: 80px; }
         body #slider-container .slider .slider-section#vos-meilleurs-parcours {
           left: 0%;
           background-image: url("http://www.mountnpass.com/wp-content/uploads/2015/05/velo-Pyrénées.jpg");
@@ -154,7 +158,96 @@ body {
         body #slider-container .slider .slider-section#la-communaute {
           left: 50%;
           background-image: url("http://photoproevent.com/_blog/wp-content/uploads/2011/10/we-are-logo-mosaique-photo-animation-guyencourt.jpg");
-          background-size: cover; }
+          background-size: cover;
+          text-align: center; }
+          body #slider-container .slider .slider-section#la-communaute h1 {
+            position: relative;
+            color: #fff;
+            font-family: sans-serif;
+            font-weight: 300;
+            letter-spacing: 5px;
+            font-size: 40px;
+            z-index: 3; }
+          body #slider-container .slider .slider-section#la-communaute h2 {
+            position: relative;
+            color: #aaa;
+            font-family: sans-serif;
+            font-weight: 300;
+            letter-spacing: 5px;
+            font-size: 20px;
+            z-index: 3; }
+          body #slider-container .slider .slider-section#la-communaute .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2; }
+          body #slider-container .slider .slider-section#la-communaute .parcours {
+            position: relative;
+            width: 80%;
+            height: 50%;
+            left: 10%;
+            top: 10%;
+            z-index: 3; }
+            body #slider-container .slider .slider-section#la-communaute .parcours .container {
+              position: relative;
+              display: inline-block;
+              height: 450px;
+              width: 450px;
+              margin: 10px;
+              background-color: rgba(244, 67, 54, 0.8);
+              transition: .5s;
+              border-radius: 5px;
+              cursor: pointer; }
+              body #slider-container .slider .slider-section#la-communaute .parcours .container:hover {
+                background-color: #f44336; }
+              @media screen and (max-width: 1700px) {
+                body #slider-container .slider .slider-section#la-communaute .parcours .container {
+                  height: 350px;
+                  width: 350px; } }
+              @media screen and (max-width: 1400px) {
+                body #slider-container .slider .slider-section#la-communaute .parcours .container {
+                  height: 250px;
+                  width: 250px; } }
+              @media screen and (max-width: 1050px) {
+                body #slider-container .slider .slider-section#la-communaute .parcours .container {
+                  height: 200px;
+                  width: 200px; } }
+              @media screen and (max-width: 600px) {
+                body #slider-container .slider .slider-section#la-communaute .parcours .container {
+                  height: 100px;
+                  width: 100px; } }
+              body #slider-container .slider .slider-section#la-communaute .parcours .container div {
+                position: absolute;
+                top: 10%;
+                left: 10%;
+                width: 80%;
+                height: 80%;
+                margin: 0;
+                padding: 0; }
+              body #slider-container .slider .slider-section#la-communaute .parcours .container span {
+                position: relative;
+                color: #fff;
+                font-family: sans-serif;
+                font-weight: 300;
+                letter-spacing: 2px; }
+                @media screen and (min-width: 1701px) {
+                  body #slider-container .slider .slider-section#la-communaute .parcours .container span {
+                    font-size: 30px; } }
+                @media screen and (max-width: 1700px) {
+                  body #slider-container .slider .slider-section#la-communaute .parcours .container span {
+                    font-size: 25px; } }
+                @media screen and (max-width: 1400px) {
+                  body #slider-container .slider .slider-section#la-communaute .parcours .container span {
+                    font-size: 20px; } }
+                @media screen and (max-width: 1050px) {
+                  body #slider-container .slider .slider-section#la-communaute .parcours .container span {
+                    font-size: 16px; } }
+                @media screen and (max-width: 600px) {
+                  body #slider-container .slider .slider-section#la-communaute .parcours .container span {
+                    font-size: 12px; } }
         body #slider-container .slider .slider-section#le-mag {
           left: 75%;
           background-color: white; }

@@ -1,1 +1,1 @@
-slider made with raw Javascript and CSS3
+slider made with raw JavaScript and CSS3
