@@ -20,19 +20,18 @@
     #types-amis
         position: relative
         left: 100px
-        right: 100px
-        width: calc(100% - 300px)
+        width: calc(100% - 200px)
         height: 50%
-        padding: 2.5%
+        margin-top: 2.5%
 
         .types-amis-section
             display: inline-block
             float: left
             padding: 0px
             height: 100%
-            width: 23%
-            margin-left: 1%
-            margin-right: 1%
+            width: 20%
+            margin-left: 0.5%
+            margin-right: 0.5%
             cursor: pointer
 
             &:hover .plain
@@ -86,6 +85,28 @@
             background-size: cover
             background-position: center
 
+        #presentez-votre-etablissement
+            position: relative
+            width: 10%
+
+            img
+                position: absolute
+                width: 120px
+                height: 120px
+                top: calc(50% - 60px)
+                left: calc(50% - 60px)
+                z-index: 2
+
+            p
+                position: absolute
+                margin: 0
+                top: calc(50% - 50px + 24px)
+                width: 90px
+                left: calc(50% - 44px)
+                color: white
+                font-family: sans-serif
+                z-index: 2
+
 
     #tous-nos-amis
         padding: 15px
@@ -96,7 +117,7 @@
         border: 2px solid $red
         transition: 1s
         cursor: pointer
-        top: 30px
+        top: 50px
         position: relative
 
         &:hover
