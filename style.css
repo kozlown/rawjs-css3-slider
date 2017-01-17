@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: hidden;
   font-family: sans-serif;
   color: #f44336;
   text-align: center; }
