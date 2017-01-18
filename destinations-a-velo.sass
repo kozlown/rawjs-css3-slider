@@ -10,6 +10,7 @@
         letter-spacing: 3px
         font-size: 40px
 
+
     h2
         font-family: sans-serif
         font-weight: 300
@@ -54,6 +55,11 @@
             transition: .5s
             text-align: center
 
+            @media screen and (max-width: 800px)
+                height: 200px
+                top: calc(100% - 200px)
+                background-color: rgba($red, .8)
+
             h1
                 position: relative
                 display: inline-block
@@ -66,6 +72,10 @@
                 left: 0
                 opacity: 0
                 transition: .5s
+
+                @media screen and (max-width: 800px)
+                    opacity: 1
+                    bottom: 15px
 
             h2
                 display: inline-block
@@ -93,11 +103,17 @@
         z-index: 2
         cursor: pointer
 
+        @media screen and (max-width: 800px)
+            height: 600px
+
         div
             background-size: cover
             height: 100%
             float: left
             position: relative
+
+            @media screen and (max-width: 800px)
+                height: 200px
 
             .plain
                 position: relative
@@ -112,6 +128,12 @@
                 font-size: 20px
                 opacity: 0
 
+                @media screen and (max-width: 800px)
+                    height: 80px
+                    top: calc(100% - 80px)
+                    background-color: rgba($red, .8)
+                    opacity: 1
+
             &:hover .plain
                 height: 60px
                 top: calc(100% - 60px)
@@ -122,21 +144,37 @@
             background-image: url("http://agence-curutchet.fr/beta/wp-content/uploads/2014/09/vuepyr%C3%A9n%C3%A9es1-1920x638.jpg")
             width: calc(30% - 60px)
 
+            @media screen and (max-width: 800px)
+                width: 50%
+
         .la-correze
             background-image: url("https://s.iha.com/00123527376/Correze-Correze.jpeg")
             width: calc(20% - 60px)
+
+            @media screen and (max-width: 800px)
+                width: 50%
 
         .vallee-du-louron
             background-image: url("http://www.vallee-du-louron.com/admin/gestAnimHome/img/photo_89.jpg")
             width: calc(27% - 60px)
 
+            @media screen and (max-width: 800px)
+                width: 50%
+
         .les-gorges-de-l-allier
             background-image: url("http://www.genie-vacances.fr/gallery/cms/images/monistrol-d-allier-haute-loire.jpg")
             width: calc(23% - 60px)
 
+            @media screen and (max-width: 800px)
+                width: 50%
+
         .presentez-vos-destinations
             width: 240px
             background-image: url("http://maximumwallhd.com/wp-content/uploads/2015/06/fonds-ecran-campagne-2015-5.jpg")
+
+            @media screen and (max-width: 800px)
+                width: 100%
+                height: 200px
 
             &:hover .overlay
                 position: absolute

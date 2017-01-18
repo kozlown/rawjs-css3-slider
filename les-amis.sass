@@ -10,12 +10,18 @@
         letter-spacing: 5px
         font-size: 40px
 
+        @media screen and (max-width: 800px)
+            font-size: 200%
+
     h2
         color: rgba(0,0,0,0.7)
         font-family: sans-serif
         font-weight: 300
         letter-spacing: 5px
         font-size: 20px
+
+        @media screen and (max-width: 800px)
+            font-size: 100%
 
     #types-amis
         position: relative
@@ -24,15 +30,24 @@
         height: 50%
         margin-top: 2.5%
 
+        @media screen and (max-width: 800px)
+            width: 96%
+            left: 2%
+
         .types-amis-section
             display: inline-block
             float: left
             padding: 0px
             height: 100%
-            width: 20%
+            width: calc(20% - 24px)
             margin-left: 0.5%
             margin-right: 0.5%
             cursor: pointer
+
+            @media screen and (max-width: 800px)
+                height: 30%
+                margin-top: 10px
+                width: 49%
 
             &:hover .plain
                 background-color: transparent
@@ -43,8 +58,10 @@
             top: 0px
             left: 0px
             width: 100%
-            height: 70%
+            height: 60%
 
+            @media screen and (max-width: 800px)
+                height: 0
         .plain
             z-index: 4
             position: relative
@@ -52,19 +69,31 @@
             bottom: 0px
             left: 0px
             width: 100%
-            height: 30%
+            height: 40%
             color: white
             text-align: center
             transition: 0.5s
+
+            @media screen and (max-width: 800px)
+                height: 100%
+
             i
                 display: block
                 font-size: 50px
                 top: 20px
                 position: relative
+
+                @media screen and (max-width: 800px)
+                    font-size: 16px
+                    top: 3px
             p
                 margin-top: 30px
                 font-size: 20px
                 font-family: sans-serif
+
+                @media screen and (max-width: 800px)
+                    font-size: 14px
+                    margin: 4px 0 0 0
 
         #hebergeurs-restaurateurs
             background-image: url("http://md1.libe.com/photo/864025-portrait-medias-gastronomie.jpg?modified_at=1459333381")
@@ -87,7 +116,10 @@
 
         #presentez-votre-etablissement
             position: relative
-            width: 10%
+            width: 120px
+
+            @media screen and (max-width: 800px)
+                display: none
 
             img
                 position: absolute
@@ -97,6 +129,11 @@
                 left: calc(50% - 60px)
                 z-index: 2
 
+                @media screen and (max-width: 800px)
+                    top: 0px
+                    left: 0
+                    width: 60px
+                    height: 60px
             p
                 position: absolute
                 margin: 0
@@ -106,6 +143,12 @@
                 color: white
                 font-family: sans-serif
                 z-index: 2
+
+                @media screen and (max-width: 800px)
+                    font-size: 12px
+                    width: 40px
+                    top: calc(50% - 20px)
+                    left: calc(50% - 30px)
 
 
     #tous-nos-amis
@@ -119,6 +162,9 @@
         cursor: pointer
         top: 50px
         position: relative
+
+        @media screen and (max-width: 800px)
+            top: -30px
 
         &:hover
             color: rgba(0,0,0,0.7)

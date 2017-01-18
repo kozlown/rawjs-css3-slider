@@ -13,6 +13,9 @@
         font-size: 40px
         z-index: 3
 
+        @media screen and (max-device-width: 800px)
+            font-size: 200%
+
     h2
         position: relative
         color: #aaa
@@ -21,6 +24,9 @@
         letter-spacing: 5px
         font-size: 20px
         z-index: 3
+
+        @media screen and (max-device-width: 800px)
+            font-size: 100%
 
     .overlay
         position: absolute
@@ -36,14 +42,17 @@
         width: 80%
         height: 50%
         left: 10%
-        top: 10%
+        top: 100px
         z-index: 3
+
+        @media screen and (max-device-width: 800px)
+            top: 10px
 
         .container
             position: relative
             display: inline-block
-            height: 450px
-            width: 450px
+            height: 400px
+            width: 400px
             margin: 10px
             background-color: rgba($red, 0.8)
             transition: .5s
@@ -54,20 +63,21 @@
                 background-color: rgba($red, 1)
 
             @media screen and (max-width: 1700px)
-                height: 350px
-                width: 350px
+                height: 340px
+                width: 340px
 
             @media screen and (max-width: 1400px)
                 height: 250px
                 width: 250px
 
-            @media screen and (max-width: 1050px)
+            @media screen and (max-width: 1111px)
                 height: 200px
                 width: 200px
 
-            @media screen and (max-width: 600px)
-                height: 100px
-                width: 100px
+            @media screen and (max-width: 800px)
+                height: 30%
+                width: 100%
+                margin: 1%
 
             div
                 position: absolute
@@ -85,17 +95,17 @@
                 font-weight: 300
                 letter-spacing: 2px
 
-                @media screen and (min-width: 1701px)
+                @media only screen and (min-width: 1701px)
                     font-size: 30px
 
-                @media screen and (max-width: 1700px)
+                @media only screen and (max-width: 1700px)
                     font-size: 25px
 
-                @media screen and (max-width: 1400px)
+                @media only screen and (max-width: 1400px)
                     font-size: 20px
 
-                @media screen and (max-width: 1050px)
+                @media only screen and (max-width: 1050px)
                     font-size: 16px
 
-                @media screen and (max-width: 600px)
+                @media only screen and (max-width: 800px)
                     font-size: 12px
