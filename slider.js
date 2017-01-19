@@ -1,4 +1,5 @@
 window.onload = function () {
+    alert("coucou")
     let slider_container = document.getElementById('slider-container')
     let slider_dom = document.getElementById('slider')
 
