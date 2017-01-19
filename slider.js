@@ -1,4 +1,4 @@
-document.on('ready', () => {
+document.addEventListener('DOMContentLoaded', function () {
     let slider_container = document.getElementById('slider-container')
     let slider_dom = document.getElementById('slider')
 
