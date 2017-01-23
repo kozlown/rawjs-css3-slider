@@ -64,16 +64,18 @@
     .slider
         position: absolute
         top: 0px
-        left: 0px
-        width: 400%
+        left: -400%
+        width: 1200%
         height: calc(100% - 80px)
         margin: 0
         padding: 0
         transition: left 2s
 
         .slider-section
-            position: absolute
-            width: 25%
+            position: relative
+            display: inline-block
+            float: left
+            width: 8.3333%
             height: 100%
             background-size: 100%
 
@@ -81,18 +83,3 @@
             @import les-amis
             @import la-communaute
             @import le-mag
-
-        &.slider-anim-1
-            left: 0%
-
-        &.slider-anim-2
-            left: -100%
-
-        &.slider-anim-3
-            left: -200%
-
-        &.slider-anim-4
-            left: -300%
-
-        &.slider-anim-5
-            left: -400%

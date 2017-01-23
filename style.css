@@ -66,62 +66,62 @@ body {
     body #slider-container .slider {
       position: absolute;
       top: 0px;
-      left: 0px;
-      width: 400%;
+      left: -400%;
+      width: 1200%;
       height: calc(100% - 80px);
       margin: 0;
       padding: 0;
       transition: left 2s; }
       body #slider-container .slider .slider-section {
-        position: absolute;
-        width: 25%;
+        position: relative;
+        display: inline-block;
+        float: left;
+        width: 8.3333%;
         height: 100%;
         background-size: 100%; }
-        body #slider-container .slider .slider-section#vos-meilleurs-parcours {
-          left: 0%;
+        body #slider-container .slider .slider-section.vos-meilleurs-parcours {
           background-image: url("http://www.mountnpass.com/wp-content/uploads/2015/05/velo-Pyrénées.jpg");
           background-size: cover; }
-          body #slider-container .slider .slider-section#vos-meilleurs-parcours .overlay {
-            position: absolute;
+          body #slider-container .slider .slider-section.vos-meilleurs-parcours .overlay {
+            position: relative;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8);
             z-index: 2; }
-        body #slider-container .slider .slider-section#les-amis {
-          left: 25%;
+        body #slider-container .slider .slider-section.les-amis {
           background-color: white;
           text-align: center; }
-          body #slider-container .slider .slider-section#les-amis h1 {
+          body #slider-container .slider .slider-section.les-amis h1 {
             color: #f44336;
             font-family: sans-serif;
             font-weight: 300;
             letter-spacing: 5px;
             font-size: 40px; }
             @media screen and (max-width: 800px) {
-              body #slider-container .slider .slider-section#les-amis h1 {
+              body #slider-container .slider .slider-section.les-amis h1 {
                 font-size: 200%; } }
-          body #slider-container .slider .slider-section#les-amis h2 {
+          body #slider-container .slider .slider-section.les-amis h2 {
             color: rgba(0, 0, 0, 0.7);
             font-family: sans-serif;
             font-weight: 300;
             letter-spacing: 5px;
             font-size: 20px; }
             @media screen and (max-width: 800px) {
-              body #slider-container .slider .slider-section#les-amis h2 {
+              body #slider-container .slider .slider-section.les-amis h2 {
                 font-size: 100%; } }
-          body #slider-container .slider .slider-section#les-amis #types-amis {
+          body #slider-container .slider .slider-section.les-amis .types-amis {
             position: relative;
             left: 100px;
             width: calc(100% - 200px);
             height: 50%;
             margin-top: 2.5%; }
             @media screen and (max-width: 800px) {
-              body #slider-container .slider .slider-section#les-amis #types-amis {
+              body #slider-container .slider .slider-section.les-amis .types-amis {
                 width: 96%;
                 left: 2%; } }
-            body #slider-container .slider .slider-section#les-amis #types-amis .types-amis-section {
+            body #slider-container .slider .slider-section.les-amis .types-amis .types-amis-section {
               display: inline-block;
               float: left;
               padding: 0px;
@@ -131,23 +131,23 @@ body {
               margin-right: 0.5%;
               cursor: pointer; }
               @media screen and (max-width: 800px) {
-                body #slider-container .slider .slider-section#les-amis #types-amis .types-amis-section {
+                body #slider-container .slider .slider-section.les-amis .types-amis .types-amis-section {
                   height: 30%;
                   margin-top: 10px;
                   width: 49%; } }
-              body #slider-container .slider .slider-section#les-amis #types-amis .types-amis-section:hover .plain {
+              body #slider-container .slider .slider-section.les-amis .types-amis .types-amis-section:hover .plain {
                 background-color: transparent;
                 transition: 0.5s ease-in; }
-            body #slider-container .slider .slider-section#les-amis #types-amis .empty {
+            body #slider-container .slider .slider-section.les-amis .types-amis .empty {
               position: relative;
               top: 0px;
               left: 0px;
               width: 100%;
               height: 60%; }
               @media screen and (max-width: 800px) {
-                body #slider-container .slider .slider-section#les-amis #types-amis .empty {
+                body #slider-container .slider .slider-section.les-amis .types-amis .empty {
                   height: 0; } }
-            body #slider-container .slider .slider-section#les-amis #types-amis .plain {
+            body #slider-container .slider .slider-section.les-amis .types-amis .plain {
               z-index: 4;
               position: relative;
               background-color: rgba(244, 67, 54, 0.8);
@@ -159,47 +159,47 @@ body {
               text-align: center;
               transition: 0.5s; }
               @media screen and (max-width: 800px) {
-                body #slider-container .slider .slider-section#les-amis #types-amis .plain {
+                body #slider-container .slider .slider-section.les-amis .types-amis .plain {
                   height: 100%; } }
-              body #slider-container .slider .slider-section#les-amis #types-amis .plain i {
+              body #slider-container .slider .slider-section.les-amis .types-amis .plain i {
                 display: block;
                 font-size: 50px;
                 top: 20px;
                 position: relative; }
                 @media screen and (max-width: 800px) {
-                  body #slider-container .slider .slider-section#les-amis #types-amis .plain i {
+                  body #slider-container .slider .slider-section.les-amis .types-amis .plain i {
                     font-size: 16px;
                     top: 3px; } }
-              body #slider-container .slider .slider-section#les-amis #types-amis .plain p {
+              body #slider-container .slider .slider-section.les-amis .types-amis .plain p {
                 margin-top: 30px;
                 font-size: 20px;
                 font-family: sans-serif; }
                 @media screen and (max-width: 800px) {
-                  body #slider-container .slider .slider-section#les-amis #types-amis .plain p {
+                  body #slider-container .slider .slider-section.les-amis .types-amis .plain p {
                     font-size: 14px;
                     margin: 4px 0 0 0; } }
-            body #slider-container .slider .slider-section#les-amis #types-amis #hebergeurs-restaurateurs {
+            body #slider-container .slider .slider-section.les-amis .types-amis .hebergeurs-restaurateurs {
               background-image: url("http://md1.libe.com/photo/864025-portrait-medias-gastronomie.jpg?modified_at=1459333381");
               background-size: cover; }
-            body #slider-container .slider .slider-section#les-amis #types-amis #reparateurs-loueurs {
+            body #slider-container .slider .slider-section.les-amis .types-amis .reparateurs-loueurs {
               background-image: url("http://cdn.darkhorizons.com/wp-content/uploads/2016/11/next-doctor-who-to-be-young-again.jpg");
               background-size: cover;
               background-position: center; }
-            body #slider-container .slider .slider-section#les-amis #types-amis #transporteurs-bagagistes {
+            body #slider-container .slider .slider-section.les-amis .types-amis .transporteurs-bagagistes {
               background-image: url("http://media.comprendrechoisir.com/usage=full:orientation=horizontal/velo-train-transport");
               background-size: cover;
               background-position: center; }
-            body #slider-container .slider .slider-section#les-amis #types-amis #offices-du-tourisme {
+            body #slider-container .slider .slider-section.les-amis .types-amis .offices-du-tourisme {
               background-image: url("http://cdn.toulouse-tourisme.com/medias//photos/original/PCUMID031FS00965_2_donjon1.jpg");
               background-size: cover;
               background-position: center; }
-            body #slider-container .slider .slider-section#les-amis #types-amis #presentez-votre-etablissement {
+            body #slider-container .slider .slider-section.les-amis .types-amis .presentez-votre-etablissement {
               position: relative;
               width: 120px; }
               @media screen and (max-width: 800px) {
-                body #slider-container .slider .slider-section#les-amis #types-amis #presentez-votre-etablissement {
+                body #slider-container .slider .slider-section.les-amis .types-amis .presentez-votre-etablissement {
                   display: none; } }
-              body #slider-container .slider .slider-section#les-amis #types-amis #presentez-votre-etablissement img {
+              body #slider-container .slider .slider-section.les-amis .types-amis .presentez-votre-etablissement img {
                 position: absolute;
                 width: 120px;
                 height: 120px;
@@ -207,12 +207,12 @@ body {
                 left: calc(50% - 60px);
                 z-index: 2; }
                 @media screen and (max-width: 800px) {
-                  body #slider-container .slider .slider-section#les-amis #types-amis #presentez-votre-etablissement img {
+                  body #slider-container .slider .slider-section.les-amis .types-amis .presentez-votre-etablissement img {
                     top: 0px;
                     left: 0;
                     width: 60px;
                     height: 60px; } }
-              body #slider-container .slider .slider-section#les-amis #types-amis #presentez-votre-etablissement p {
+              body #slider-container .slider .slider-section.les-amis .types-amis .presentez-votre-etablissement p {
                 position: absolute;
                 margin: 0;
                 top: calc(50% - 50px + 24px);
@@ -222,12 +222,12 @@ body {
                 font-family: sans-serif;
                 z-index: 2; }
                 @media screen and (max-width: 800px) {
-                  body #slider-container .slider .slider-section#les-amis #types-amis #presentez-votre-etablissement p {
+                  body #slider-container .slider .slider-section.les-amis .types-amis .presentez-votre-etablissement p {
                     font-size: 12px;
                     width: 40px;
                     top: calc(50% - 20px);
                     left: calc(50% - 30px); } }
-          body #slider-container .slider .slider-section#les-amis #tous-nos-amis {
+          body #slider-container .slider .slider-section.les-amis .tous-nos-amis {
             padding: 15px;
             font-size: 20px;
             background-color: transparent;
@@ -239,16 +239,15 @@ body {
             top: 50px;
             position: relative; }
             @media screen and (max-width: 800px) {
-              body #slider-container .slider .slider-section#les-amis #tous-nos-amis {
+              body #slider-container .slider .slider-section.les-amis .tous-nos-amis {
                 top: -30px; } }
-            body #slider-container .slider .slider-section#les-amis #tous-nos-amis:hover {
+            body #slider-container .slider .slider-section.les-amis .tous-nos-amis:hover {
               color: rgba(0, 0, 0, 0.7); }
-        body #slider-container .slider .slider-section#la-communaute {
-          left: 50%;
+        body #slider-container .slider .slider-section.la-communaute {
           background-image: url("http://photoproevent.com/_blog/wp-content/uploads/2011/10/we-are-logo-mosaique-photo-animation-guyencourt.jpg");
           background-size: cover;
           text-align: center; }
-          body #slider-container .slider .slider-section#la-communaute h1 {
+          body #slider-container .slider .slider-section.la-communaute h1 {
             position: relative;
             color: #fff;
             font-family: sans-serif;
@@ -257,9 +256,9 @@ body {
             font-size: 40px;
             z-index: 3; }
             @media screen and (max-device-width: 800px) {
-              body #slider-container .slider .slider-section#la-communaute h1 {
+              body #slider-container .slider .slider-section.la-communaute h1 {
                 font-size: 200%; } }
-          body #slider-container .slider .slider-section#la-communaute h2 {
+          body #slider-container .slider .slider-section.la-communaute h2 {
             position: relative;
             color: #aaa;
             font-family: sans-serif;
@@ -268,9 +267,9 @@ body {
             font-size: 20px;
             z-index: 3; }
             @media screen and (max-device-width: 800px) {
-              body #slider-container .slider .slider-section#la-communaute h2 {
+              body #slider-container .slider .slider-section.la-communaute h2 {
                 font-size: 100%; } }
-          body #slider-container .slider .slider-section#la-communaute .overlay {
+          body #slider-container .slider .slider-section.la-communaute .overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -278,7 +277,7 @@ body {
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8);
             z-index: 2; }
-          body #slider-container .slider .slider-section#la-communaute .parcours {
+          body #slider-container .slider .slider-section.la-communaute .parcours {
             position: relative;
             width: 80%;
             height: 50%;
@@ -286,9 +285,9 @@ body {
             top: 100px;
             z-index: 3; }
             @media screen and (max-device-width: 800px) {
-              body #slider-container .slider .slider-section#la-communaute .parcours {
+              body #slider-container .slider .slider-section.la-communaute .parcours {
                 top: 10px; } }
-            body #slider-container .slider .slider-section#la-communaute .parcours .container {
+            body #slider-container .slider .slider-section.la-communaute .parcours .container {
               position: relative;
               display: inline-block;
               height: 400px;
@@ -298,26 +297,26 @@ body {
               transition: .5s;
               border-radius: 5px;
               cursor: pointer; }
-              body #slider-container .slider .slider-section#la-communaute .parcours .container:hover {
+              body #slider-container .slider .slider-section.la-communaute .parcours .container:hover {
                 background-color: #f44336; }
               @media screen and (max-width: 1700px) {
-                body #slider-container .slider .slider-section#la-communaute .parcours .container {
+                body #slider-container .slider .slider-section.la-communaute .parcours .container {
                   height: 340px;
                   width: 340px; } }
               @media screen and (max-width: 1400px) {
-                body #slider-container .slider .slider-section#la-communaute .parcours .container {
+                body #slider-container .slider .slider-section.la-communaute .parcours .container {
                   height: 250px;
                   width: 250px; } }
               @media screen and (max-width: 1111px) {
-                body #slider-container .slider .slider-section#la-communaute .parcours .container {
+                body #slider-container .slider .slider-section.la-communaute .parcours .container {
                   height: 200px;
                   width: 200px; } }
               @media screen and (max-width: 800px) {
-                body #slider-container .slider .slider-section#la-communaute .parcours .container {
+                body #slider-container .slider .slider-section.la-communaute .parcours .container {
                   height: 30%;
                   width: 100%;
                   margin: 1%; } }
-              body #slider-container .slider .slider-section#la-communaute .parcours .container div {
+              body #slider-container .slider .slider-section.la-communaute .parcours .container div {
                 position: absolute;
                 top: 10%;
                 left: 10%;
@@ -325,40 +324,29 @@ body {
                 height: 80%;
                 margin: 0;
                 padding: 0; }
-              body #slider-container .slider .slider-section#la-communaute .parcours .container span {
+              body #slider-container .slider .slider-section.la-communaute .parcours .container span {
                 position: relative;
                 color: #fff;
                 font-family: sans-serif;
                 font-weight: 300;
                 letter-spacing: 2px; }
                 @media only screen and (min-width: 1701px) {
-                  body #slider-container .slider .slider-section#la-communaute .parcours .container span {
+                  body #slider-container .slider .slider-section.la-communaute .parcours .container span {
                     font-size: 30px; } }
                 @media only screen and (max-width: 1700px) {
-                  body #slider-container .slider .slider-section#la-communaute .parcours .container span {
+                  body #slider-container .slider .slider-section.la-communaute .parcours .container span {
                     font-size: 25px; } }
                 @media only screen and (max-width: 1400px) {
-                  body #slider-container .slider .slider-section#la-communaute .parcours .container span {
+                  body #slider-container .slider .slider-section.la-communaute .parcours .container span {
                     font-size: 20px; } }
                 @media only screen and (max-width: 1050px) {
-                  body #slider-container .slider .slider-section#la-communaute .parcours .container span {
+                  body #slider-container .slider .slider-section.la-communaute .parcours .container span {
                     font-size: 16px; } }
                 @media only screen and (max-width: 800px) {
-                  body #slider-container .slider .slider-section#la-communaute .parcours .container span {
+                  body #slider-container .slider .slider-section.la-communaute .parcours .container span {
                     font-size: 12px; } }
-        body #slider-container .slider .slider-section#le-mag {
-          left: 75%;
+        body #slider-container .slider .slider-section.le-mag {
           background-color: white; }
-      body #slider-container .slider.slider-anim-1 {
-        left: 0%; }
-      body #slider-container .slider.slider-anim-2 {
-        left: -100%; }
-      body #slider-container .slider.slider-anim-3 {
-        left: -200%; }
-      body #slider-container .slider.slider-anim-4 {
-        left: -300%; }
-      body #slider-container .slider.slider-anim-5 {
-        left: -400%; }
   body #destinations-a-velo {
     position: relative;
     display: block;

@@ -1,44 +1,39 @@
-alert("coucou")
 window.onload = function () {
-    alert("coucou")
     let slider_container = document.getElementById('slider-container')
     let slider_dom = document.getElementById('slider')
 
     let go_right_dom = document.getElementById('go-right')
     let go_left_dom = document.getElementById('go-left')
     let go_down_dom = document.getElementById('go-down')
-    let actual_section = 1
-    mousePos = {}
+    let actual_section = 5
+    let translate3dX = 0
+    let mousePos = {}
 
 
     // slide buttons
     let go_right = (() => {
-        let last_section = actual_section
-        // set the new actual section
-        if (actual_section < 4){
-            actual_section ++
-            removeClass(slider_dom, "slider-anim-"+last_section)
-            addClass(slider_dom, "slider-anim-"+actual_section)
-        }
-        else {
-            actual_section = 1
-            removeClass(slider_dom, "slider-anim-"+last_section)
-            addClass(slider_dom, "slider-anim-"+actual_section)
-        }
+        actual_section ++
+        console.log('actual_section', actual_section);
+        slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth }px`
+
+        // last is first
+        setTimeout(() => {
+            slider_dom.appendChild(slider_dom.children[0])
+            translate3dX += slider_container.clientWidth
+            slider_dom.style.transform = `translate3d(${ translate3dX }px,0,0)`
+        }, 2000)
     })
     let go_left = (() => {
-        let last_section = actual_section
-        // set the new actual section
-        if (actual_section > 1){
-            actual_section --
-            removeClass(slider_dom, "slider-anim-"+last_section)
-            addClass(slider_dom, "slider-anim-"+actual_section)
-        }
-        else {
-            actual_section = 4
-            removeClass(slider_dom, "slider-anim-"+last_section)
-            addClass(slider_dom, "slider-anim-"+actual_section)
-        }
+        actual_section --
+        console.log('actual_section', actual_section);
+        slider_dom.style.left = `${ -actual_section * slider_container.clientWidth }px`
+
+        // first is last
+        setTimeout(() => {
+            slider_dom.insertBefore(slider_dom.children[11], slider_dom.children[0])
+            translate3dX -= slider_container.clientWidth
+            slider_dom.style.transform = `translate3d(${ translate3dX }px,0,0)`
+        }, 2000)
     })
 
 
