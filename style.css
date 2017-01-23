@@ -394,6 +394,11 @@ body {
         height: 140px;
         top: calc(100% - 140px);
         background-color: rgba(244, 67, 54, 0.8); }
+        @media screen and (max-width: 800px) {
+          body #destinations-a-velo .coup-de-coeur-du-mois:hover .plain {
+            height: 200px;
+            top: calc(100% - 200px);
+            background-color: rgba(244, 67, 54, 0.8); } }
       body #destinations-a-velo .coup-de-coeur-du-mois:hover .plain h1 {
         bottom: 10px;
         opacity: 1; }
