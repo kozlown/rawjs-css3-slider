@@ -148,6 +148,12 @@ let init_slider = function () {
     // handle grabing and show/hide arrows of the slider
     slider_container.addEventListener("touchmove", (e) => {
         currentTouch.x = e.touches[0].pageX
+
+        // if scrolling on the x-axis
+        if (touchStart.x - currentTouch.x > 10 || touchStart.x - currentTouch.x < -10){
+            e.preventDefault()
+        }
+
         if (grabing){
             let delta = (e.touches[0].pageX - touchStart.x)
             slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth + delta }px`
