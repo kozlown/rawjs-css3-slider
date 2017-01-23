@@ -147,6 +147,7 @@ let init_slider = function () {
         }
         slider_dom.style.transition = "left .5s"
         document.body.style.overflowY = "scroll"
+        document.ontouchmove = function(e){ return true; }
         lock = false
     })
 
@@ -167,6 +168,7 @@ let init_slider = function () {
         }
         if (lock === "X") {
             document.body.style.overflowY = "hidden"
+            document.ontouchmove = function(e){ e.preventDefault(); }
             let delta = (currentTouch.x - touchStart.x)
             slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth + delta }px`
         }
