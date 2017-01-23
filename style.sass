@@ -11,6 +11,22 @@ body
 	color: $red
 	text-align: center
 
+	#go-top
+		display: block
+		opacity: 0
+		transition: .5s
+		position: fixed
+		z-index: 5
+		font-size: 50px
+		width: 50px
+		cursor: pointer
+		right: 30px
+		top: 30px
+
+		@media screen and (max-width: 800px)
+		    display: none !important
+
 	@import slider
 	@import destinations-a-velo
 	@import header
+	@import footer

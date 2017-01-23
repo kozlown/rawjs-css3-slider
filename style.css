@@ -9,11 +9,25 @@ body {
   font-family: sans-serif;
   color: #f44336;
   text-align: center; }
+  body #go-top {
+    display: block;
+    opacity: 0;
+    transition: .5s;
+    position: fixed;
+    z-index: 5;
+    font-size: 50px;
+    width: 50px;
+    cursor: pointer;
+    right: 30px;
+    top: 30px; }
+    @media screen and (max-width: 800px) {
+      body #go-top {
+        display: none !important; } }
   body #slider-container {
     position: relative;
     overflow: hidden;
     left: 0px;
-    margin-top: 80px;
+    margin-top: 0px;
     height: 100vh;
     width: 100%;
     cursor: pointer; }
@@ -55,7 +69,7 @@ body {
           right: 3px; }
     body #slider-container #go-down {
       position: absolute;
-      bottom: 100px;
+      bottom: 50px;
       z-index: 5;
       font-size: 50px;
       width: 50px;
@@ -69,7 +83,7 @@ body {
       top: 0px;
       left: -400%;
       width: 1200%;
-      height: calc(100% - 80px);
+      height: 100%;
       margin: 0;
       padding: 0;
       transition: left .5s; }
@@ -352,7 +366,7 @@ body {
     position: relative;
     display: block;
     text-align: center;
-    margin-top: 100px; }
+    margin-top: 50px; }
     body #destinations-a-velo h1 {
       font-family: sans-serif;
       font-weight: 300;
@@ -369,6 +383,7 @@ body {
       height: 400px;
       background-image: url("http://www.airotel-pyrenees.com/uploads/images/Gallery/velo/BV-Tourmalet5127.JPG");
       background-size: cover;
+      margin-top: 50px;
       z-index: 1; }
       body #destinations-a-velo .coup-de-coeur-du-mois:hover .plain {
         height: 140px;
@@ -558,3 +573,8 @@ body {
       padding-left: 40px;
       padding-right: 40px;
       display: inline; }
+  body footer {
+    height: 500px;
+    position: relative;
+    z-index: 3;
+    background-color: #111; }

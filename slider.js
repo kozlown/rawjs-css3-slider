@@ -1,4 +1,4 @@
-window.onload = function () {
+let init_slider = function () {
     let slider_container = document.getElementById('slider-container')
     let slider_dom = document.getElementById('slider')
 
@@ -73,7 +73,7 @@ window.onload = function () {
         go_left()
     })
     go_down_dom.addEventListener("click", () => {
-        scrollTo(document.getElementById("destinations-a-velo").offsetTop-100, 600)
+        scrollTo(document.getElementById("destinations-a-velo").offsetTop-50, 600)
     })
 
 
@@ -101,6 +101,7 @@ window.onload = function () {
         slider_dom.style.transition = "left .5s"
     })
 
+    // handle grabing and show/hide arrows of the slider
     slider_container.addEventListener("mousemove", () => {
         // if the mouse is on the left side
         if (mousePos.x < window.innerWidth/2){
@@ -116,7 +117,6 @@ window.onload = function () {
             slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth + delta }px`
         }
     })
-
 
     // CLASSES FUNCTIONS
     function hasClass(el, className) {
