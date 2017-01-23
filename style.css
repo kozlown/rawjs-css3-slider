@@ -141,15 +141,14 @@ body {
               float: left;
               padding: 0px;
               height: 100%;
-              width: calc(20% - 24px);
               margin-left: 0.5%;
               margin-right: 0.5%;
               cursor: pointer; }
               @media screen and (max-width: 800px) {
                 body #slider-container .slider .slider-section.les-amis .types-amis .types-amis-section {
-                  height: 30%;
-                  margin-top: 10px;
-                  width: 49%; } }
+                  height: 30% !important;
+                  margin-top: 10px !important;
+                  width: 49% !important; } }
               body #slider-container .slider .slider-section.les-amis .types-amis .types-amis-section:hover .plain {
                 background-color: transparent;
                 transition: 0.5s ease-in; }
@@ -195,22 +194,27 @@ body {
                     margin: 4px 0 0 0; } }
             body #slider-container .slider .slider-section.les-amis .types-amis .hebergeurs-restaurateurs {
               background-image: url("http://md1.libe.com/photo/864025-portrait-medias-gastronomie.jpg?modified_at=1459333381");
-              background-size: cover; }
+              background-size: cover;
+              width: calc(22% - 24px); }
             body #slider-container .slider .slider-section.les-amis .types-amis .reparateurs-loueurs {
               background-image: url("http://cdn.darkhorizons.com/wp-content/uploads/2016/11/next-doctor-who-to-be-young-again.jpg");
               background-size: cover;
-              background-position: center; }
+              background-position: center;
+              width: calc(22% - 24px); }
             body #slider-container .slider .slider-section.les-amis .types-amis .transporteurs-bagagistes {
               background-image: url("http://media.comprendrechoisir.com/usage=full:orientation=horizontal/velo-train-transport");
               background-size: cover;
-              background-position: center; }
+              background-position: center;
+              width: calc(22% - 24px); }
             body #slider-container .slider .slider-section.les-amis .types-amis .offices-du-tourisme {
               background-image: url("http://cdn.toulouse-tourisme.com/medias//photos/original/PCUMID031FS00965_2_donjon1.jpg");
               background-size: cover;
-              background-position: center; }
+              background-position: center;
+              width: calc(22% - 24px); }
             body #slider-container .slider .slider-section.les-amis .types-amis .presentez-votre-etablissement {
               position: relative;
-              width: 120px; }
+              width: calc(12% - 24px);
+              min-width: 120px; }
               @media screen and (max-width: 800px) {
                 body #slider-container .slider .slider-section.les-amis .types-amis .presentez-votre-etablissement {
                   display: none; } }

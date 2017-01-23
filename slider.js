@@ -11,6 +11,8 @@ let init_slider = function () {
     let mousePos = {}
     let mousePosOnClick = {}
     let grabing = false
+    let touchStart = {}
+    let currentTouch = {}
 
 
     // slide buttons
@@ -76,21 +78,21 @@ let init_slider = function () {
         scrollTo(document.getElementById("destinations-a-velo").offsetTop-50, 600)
     })
 
-
+    // SLIDE WITH PC
     // stop automatic scrolling and handle grab sliding
-    slider_dom.addEventListener("mousedown", () => {
+    slider_dom.addEventListener("mousedown", (e) => {
         stop_automatic_scrolling()
-        mousePosOnClick.x = mousePos.x
+        mousePosOnClick.x = e.pageX
         grabing = true
         slider_dom.style.transition = "left 0s"
     })
 
     // handle grab ending
-    slider_dom.addEventListener("mouseup", () => {
-        if (mousePos.x - mousePosOnClick.x > 100){
+    slider_dom.addEventListener("mouseup", (e) => {
+        if (e.pageX - mousePosOnClick.x > 100){
             go_left()
         }
-        else if (mousePos.x - mousePosOnClick.x < -100){
+        else if (e.pageX - mousePosOnClick.x < -100){
             go_right()
         }
         else {
@@ -102,9 +104,9 @@ let init_slider = function () {
     })
 
     // handle grabing and show/hide arrows of the slider
-    slider_container.addEventListener("mousemove", () => {
+    slider_container.addEventListener("mousemove", (e) => {
         // if the mouse is on the left side
-        if (mousePos.x < window.innerWidth/2){
+        if (e.pageX < window.innerWidth/2){
             show_left_arrow()
             hide_right_arrow()
         }
@@ -113,75 +115,42 @@ let init_slider = function () {
             hide_left_arrow()
         }
         if (grabing){
-            let delta = (mousePos.x - mousePosOnClick.x)
+            let delta = (e.pageX - mousePosOnClick.x)
             slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth + delta }px`
         }
     })
 
-    // CLASSES FUNCTIONS
-    function hasClass(el, className) {
-        if (el.classList)
-        return el.classList.contains(className)
-        else
-        return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
-    }
-    function addClass(el, className) {
-        if (el.classList)
-        el.classList.add(className)
-        else if (!hasClass(el, className)) el.className += " " + className
-    }
-    function removeClass(el, className) {
-        if (el.classList)
-        el.classList.remove(className)
-        else if (hasClass(el, className)) {
-            var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
-            el.className=el.className.replace(reg, ' ')
+    // SLIDE WITH SMARTPHONE
+    // stop automatic scrolling and handle grab sliding
+    slider_dom.addEventListener("touchstart", (e) => {
+        stop_automatic_scrolling()
+        touchStart.x = e.touches[0].pageX
+        grabing = true
+        slider_dom.style.transition = "left 0s"
+    })
+
+    // handle grab ending
+    slider_dom.addEventListener("touchend", (e) => {
+        if (currentTouch.x - touchStart.x > 30){
+            go_left()
         }
-    }
-
-
-    // SCROLL FUNCTION
-    function scrollTo(to, duration) {
-        if (duration <= 0) return;
-        var difference = to - window.scrollY;
-        var perTick = difference / duration * 10;
-
-        setTimeout(function() {
-            window.scroll(0, window.scrollY + perTick);
-            if (window.scrollY === to) return;
-            scrollTo(to, duration - (1/perTick > 5 ? 1/perTick : 5));
-        }, 10);
-    }
-
-
-    // GET MOUSE POSITON
-    (function() {
-        document.onmousemove = handleMouseMove;
-        function handleMouseMove(event) {
-            var dot, eventDoc, doc, body, pageX, pageY;
-
-            event = event || window.event; // IE-ism
-
-            // If pageX/Y aren't available and clientX/Y are,
-            // calculate pageX/Y - logic taken from jQuery.
-            // (This is to support old IE)
-            if (event.pageX == null && event.clientX != null) {
-                eventDoc = (event.target && event.target.ownerDocument) || document;
-                doc = eventDoc.documentElement;
-                body = eventDoc.body;
-
-                event.pageX = event.clientX +
-                (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
-                (doc && doc.clientLeft || body && body.clientLeft || 0);
-                event.pageY = event.clientY +
-                (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
-                (doc && doc.clientTop  || body && body.clientTop  || 0 );
-            }
-
-            mousePos = {
-                x: event.pageX,
-                y: event.pageY
-            };
+        else if (currentTouch.x - touchStart.x < -30){
+            go_right()
         }
-    })();
+        else {
+            // go back to the last position
+            slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth }px`
+        }
+        grabing = false
+        slider_dom.style.transition = "left .5s"
+    })
+
+    // handle grabing and show/hide arrows of the slider
+    slider_container.addEventListener("touchmove", (e) => {
+        currentTouch.x = e.touches[0].pageX
+        if (grabing){
+            let delta = (e.touches[0].pageX - touchStart.x)
+            slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth + delta }px`
+        }
+    })
 }
