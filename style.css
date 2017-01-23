@@ -8,7 +8,8 @@ body {
   overflow-y: scroll;
   font-family: sans-serif;
   color: #f44336;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
   body #go-top {
     display: block;
     opacity: 0;
@@ -489,6 +490,12 @@ body {
           top: calc(100% - 60px);
           background-color: rgba(244, 67, 54, 0.8);
           opacity: 1; }
+          @media screen and (max-width: 800px) {
+            body #destinations-a-velo .autres-propositions div:hover .plain {
+              height: 80px;
+              top: calc(100% - 80px);
+              background-color: rgba(244, 67, 54, 0.8);
+              opacity: 1; } }
       body #destinations-a-velo .autres-propositions .bearn {
         background-image: url("http://agence-curutchet.fr/beta/wp-content/uploads/2014/09/vuepyr%C3%A9n%C3%A9es1-1920x638.jpg");
         width: calc(30% - 60px); }
