@@ -125,6 +125,7 @@ let init_slider = function () {
     slider_dom.addEventListener("touchstart", (e) => {
         stop_automatic_scrolling()
         touchStart.x = e.touches[0].pageX
+        touchStart.y = e.touches[0].pageY
         grabing = true
         slider_dom.style.transition = "left 0s"
     })
@@ -148,15 +149,15 @@ let init_slider = function () {
     // handle grabing and show/hide arrows of the slider
     slider_container.addEventListener("touchmove", (e) => {
         currentTouch.x = e.touches[0].pageX
+        currentTouch.y = e.touches[0].pageY
 
-        // if scrolling on the x-axis
-        if (touchStart.x - currentTouch.x > 10 || touchStart.x - currentTouch.x < -10){
+        // if sliding on the x-axis, no way to scroll down
+        if (Math.abs(touchStart.x - currentTouch.x) > Math.abs(touchStart.y - currentTouch.y)){
             e.preventDefault()
-        }
-
-        if (grabing){
-            let delta = (e.touches[0].pageX - touchStart.x)
-            slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth + delta }px`
+            if (grabing){
+                let delta = (e.touches[0].pageX - touchStart.x)
+                slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth + delta }px`
+            }
         }
     })
 }
