@@ -11,6 +11,7 @@ let init_slider = function () {
     let mousePos = {}
     let mousePosOnClick = {}
     let grabing = false
+    let lock = false
     let touchStart = {}
     let currentTouch = {}
 
@@ -124,40 +125,50 @@ let init_slider = function () {
     // stop automatic scrolling and handle grab sliding
     slider_dom.addEventListener("touchstart", (e) => {
         stop_automatic_scrolling()
-        touchStart.x = e.touches[0].pageX
-        touchStart.y = e.touches[0].pageY
-        grabing = true
+        touchStart.x = e.touches[0].clientX
+        touchStart.y = e.touches[0].clientY
         slider_dom.style.transition = "left 0s"
     })
 
     // handle grab ending
     slider_dom.addEventListener("touchend", (e) => {
-        if (currentTouch.x - touchStart.x > 30){
-            go_left()
+        if (lock === "X")
+        {
+            if (currentTouch.x - touchStart.x > 30){
+                go_left()
+            }
+            else if (currentTouch.x - touchStart.x < -30){
+                go_right()
+            }
+            else {
+                // go back to the last position
+                slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth }px`
+            }
         }
-        else if (currentTouch.x - touchStart.x < -30){
-            go_right()
-        }
-        else {
-            // go back to the last position
-            slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth }px`
-        }
-        grabing = false
         slider_dom.style.transition = "left .5s"
+        document.body.style.overflowY = "scroll"
+        lock = false
     })
 
     // handle grabing and show/hide arrows of the slider
     slider_container.addEventListener("touchmove", (e) => {
-        currentTouch.x = e.touches[0].pageX
-        currentTouch.y = e.touches[0].pageY
-
+        currentTouch.x = e.touches[0].clientX
+        currentTouch.y = e.touches[0].clientY
+        let deltaX = Math.abs(currentTouch.x - touchStart.x)
+        let deltaY = Math.abs(currentTouch.y - touchStart.y)
         // if sliding on the x-axis, no way to scroll down
-        if (Math.abs(touchStart.x - currentTouch.x) > Math.abs(touchStart.y - currentTouch.y)){
-            e.preventDefault()
-            if (grabing){
-                let delta = (e.touches[0].pageX - touchStart.x)
-                slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth + delta }px`
+        if (!lock) {
+            if (deltaX > deltaY && deltaX > 10){
+                lock = "X"
             }
+            else if (deltaY > 10) {
+                lock = "Y"
+            }
+        }
+        if (lock === "X") {
+            document.body.style.overflowY = "hidden"
+            let delta = (currentTouch.x - touchStart.x)
+            slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth + delta }px`
         }
     })
 }
