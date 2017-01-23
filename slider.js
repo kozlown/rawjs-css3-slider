@@ -7,13 +7,15 @@ window.onload = function () {
     let go_down_dom = document.getElementById('go-down')
     let actual_section = 5
     let translate3dX = 0
+    let translate3dXGrab = 0
     let mousePos = {}
+    let mousePosOnClick = {}
+    let grabing = false
 
 
     // slide buttons
     let go_right = (() => {
         actual_section ++
-        console.log('actual_section', actual_section);
         slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth }px`
 
         // last is first
@@ -25,8 +27,7 @@ window.onload = function () {
     })
     let go_left = (() => {
         actual_section --
-        console.log('actual_section', actual_section);
-        slider_dom.style.left = `${ -actual_section * slider_container.clientWidth }px`
+        slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth }px`
 
         // first is last
         setTimeout(() => {
@@ -76,9 +77,32 @@ window.onload = function () {
     })
 
 
-    // stop automatic scrolling
-    slider_dom.addEventListener("click", stop_automatic_scrolling)
+    // stop automatic scrolling and handle grab sliding
+    slider_dom.addEventListener("mousedown", () => {
+        stop_automatic_scrolling()
+        mousePosOnClick.x = mousePos.x
+        grabing = true
+        slider_dom.style.transition = "left 0s"
+    })
+
+    // handle grab ending
+    slider_dom.addEventListener("mouseup", () => {
+        if (mousePos.x - mousePosOnClick.x > 100){
+            go_left()
+        }
+        else if (mousePos.x - mousePosOnClick.x < -100){
+            go_right()
+        }
+        else {
+            // go back to the last position
+            slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth }px`
+        }
+        grabing = false
+        slider_dom.style.transition = "left .5s"
+    })
+
     slider_container.addEventListener("mousemove", () => {
+        // if the mouse is on the left side
         if (mousePos.x < window.innerWidth/2){
             show_left_arrow()
             hide_right_arrow()
@@ -86,6 +110,10 @@ window.onload = function () {
         else {
             show_right_arrow()
             hide_left_arrow()
+        }
+        if (grabing){
+            let delta = (mousePos.x - mousePosOnClick.x)
+            slider_dom.style.left = `${ -(actual_section-1) * slider_container.clientWidth + delta }px`
         }
     })
 
